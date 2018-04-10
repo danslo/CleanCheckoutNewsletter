@@ -1,0 +1,14 @@
+.opc-wrapper .newsletter-title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.newsletter-subscribe label {
+    float: left;
+    width: 90%;
+}
+
+.newsletter-subscribe input[type="checkbox"] {
+    margin: 4px 8px 0px 0px;
+    float: left;
+}
