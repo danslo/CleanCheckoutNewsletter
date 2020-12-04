@@ -5,8 +5,9 @@
 define([
     'jquery',
     'Magento_Checkout/js/model/full-screen-loader',
-    'Magento_Checkout/js/checkout-data'
-], function ($, fullScreenLoader, checkoutData) {
+    'Magento_Checkout/js/checkout-data',
+    'Magento_Checkout/js/model/quote'
+], function ($, fullScreenLoader, checkoutData, quote) {
     'use strict';
 
     /**
@@ -17,7 +18,9 @@ define([
             getEmail: function () {
                 return window.isCustomerLoggedIn
                     ? window.customerData.email
-                    : checkoutData.getValidatedEmailValue()
+                    : (checkoutData.getValidatedEmailValue() ?
+                        checkoutData.getValidatedEmailValue()
+                    : quote.guestEmail)
             },
 
             afterPlaceOrder: function () {
